@@ -1,13 +1,23 @@
-package cs112hw3project02;
-
 /* Figure.java - 
  * 
  * Author : JiHye Chun
- * Module : Module 3
+ * Module : Module3
  * Project : Chapter8/project #5
  * Problem Statement : 
- * Algorithm :
+ * 
+ * Algorithm : 
+ * 1. Create an abstract class named
+ *    'Figure'.
+ * 2. Create abstract methods for 
+ *    figure class.
+ *    - draw 
+ *    - erase
+ *    - center
+ *    - equals
+ *    - toString
  */
+
+package cs112hw3project02;
 
 // Create abstract methods 
 public abstract class Figure 

@@ -1,3 +1,26 @@
+/* Grid.java - 
+ * 
+ * Author : JiHye Chun
+ * Module : Module 3
+ * Project : Chapter8/project #5
+ * Problem Statement : 
+ * 
+ * Algorithm :
+ * 1. Create instance variables for 
+ *    grid class.
+ * 2. Create a constructor for the
+ *    grid class and initialize the 
+ *    instance variables.
+ * 3. Create a method that draw 
+ *    rectangles.
+ * 4. Create a method that erase the
+ *    rectangle figure.
+ * 5. Create a method that draw 
+ *    triangles.
+ * 6.
+ * 
+ */
+
 package cs112hw3project02;
 
 public class Grid 
@@ -27,7 +50,7 @@ public class Grid
 	}
 	
 	// draw rectangle
-	public void drawRectangle(Rectangle rect) 
+	public void drawRectangle(Rectangle rect, char drawingChar) 
 	{
 		// size of the rectangle
 		int width = rect.getWidth();
@@ -41,23 +64,30 @@ public class Grid
 		for(int i = y ; i < length + y ; i++)
 		{	 
 			// left side
-			grid[i][x] = '*';
+			grid[i][x] = drawingChar;
 			
 			// right side
-			grid[i][width - 1 + x] = '*';
+			grid[i][width - 1 + x] = drawingChar;
 		}
 		
 		// top and bottom of the rectangle
 		for(int j = x ; j < width + x; j++)
 		{
 			// top 
-			grid[y][j] = '*';
+			grid[y][j] = drawingChar;
 			
 			// bottom
-			grid[length - 1 + y][j] = '*';	
+			grid[length - 1 + y][j] = drawingChar;	
 		}
 	}
 	
+	// erase rectangle method.
+	public void eraseRectangle(Rectangle rect, char newChar)
+	{
+		this.drawRectangle(rect, ' ');
+	}
+	
+	// Draw triangle method.
 	public void drawTriangle(Triangle tri)
 	{
 		int aSide = tri.getSide();
@@ -81,7 +111,7 @@ public class Grid
 
 		}		
 	}
-
+	// 
 	public char[][] getGrid()
 	{
 		return grid;
@@ -93,9 +123,13 @@ public class Grid
 	
 	// Create method that sets a 
 	// new coordinates of the rectangle.
-	public void reCenter(int newX, int newY)
+	public void reCenter(Rectangle rect, int newX, int newY)
 	{	
+		rect.setX(newX);
+		rect.setY(newY);
 		
+		this.eraseRectangle(rect,' ');
+		this.drawRectangle(rect, '+');
 	}
 
 	public void display() {
