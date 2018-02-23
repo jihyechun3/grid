@@ -37,15 +37,10 @@ public class Grid
 		
 		// initialize it to blank char
 		for(int i = 0 ; i < dimensions ; i++)
-		{			
-			grid[i][0] = ' ';
-			grid[0][i] = ' ';
-		}
-		
-		for(int j = 0 ; j < dimensions ; j++)
 		{
-			grid[0][j] = ' ';
-			grid[j][0] = ' ';	
+			for(int j = 0; j < dimensions; j++){
+				grid[i][j] = ' ';
+			}
 		}
 	}
 	
@@ -124,11 +119,12 @@ public class Grid
 	// Create method that sets a 
 	// new coordinates of the rectangle.
 	public void reCenter(Rectangle rect, int newX, int newY)
-	{	
+	{
+        this.eraseRectangle(rect,' ');
+
 		rect.setX(newX);
 		rect.setY(newY);
-		
-		this.eraseRectangle(rect,' ');
+
 		this.drawRectangle(rect, '+');
 	}
 

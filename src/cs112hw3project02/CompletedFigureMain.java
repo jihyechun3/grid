@@ -34,27 +34,11 @@ public class CompletedFigureMain
 		//length,width,x,y
 		Rectangle rect = new Rectangle(10,10,20,20);
 		Rectangle rect2 = new Rectangle(8,10,5,7);
-		
-		grid.drawRectangle(rect, '*');
-		grid.reCenter(rect,10,10);
 
-		grid.drawRectangle(rect2, '*');
-	
-		// side length, x,y
-		Triangle tri = new Triangle(9,25,25);
-		grid.drawTriangle(tri);
+		grid.drawRectangle(rect, '*');
+		grid.reCenter(rect, 0, 0);
 		grid.display();
-		
-		
-		/**
-		grid.getDimensions();
-		
-		Figure newRectangle = new Rectangle(5,5,20,20);
-		newRectangle.draw();
-		
-		Figure newTriangle = new Triangle(6);
-		newTriangle.draw();
-		*/
+
 		
 	}
 
